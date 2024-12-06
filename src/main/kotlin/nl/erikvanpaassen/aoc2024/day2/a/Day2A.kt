@@ -1,14 +1,14 @@
-package nl.erikvanpaassen.aoc2024
+package nl.erikvanpaassen.aoc2024.day2.a
 
 import java.io.File
 import kotlin.math.abs
 
 fun main() {
-    val reports = File("input/day2a.txt").readLines().map(::DampenedReport)
-    println(reports.count(DampenedReport::isDampenedSafe))
+    val reports = File("input/day2a.txt").readLines().map(::Report)
+    println(reports.count(Report::isSafe))
 }
 
-class DampenedReport(val levels: List<Int>) {
+class Report(val levels: List<Int>) {
 
     constructor(line: String) : this(line.split(' ').map { v -> v.toInt() })
 
@@ -35,19 +35,5 @@ class DampenedReport(val levels: List<Int>) {
         }
 
         return true
-    }
-
-    fun isDampenedSafe(): Boolean {
-        if (isSafe()) {
-            return true
-        }
-
-        for (i in levels.indices) {
-            if (DampenedReport(levels.filterIndexed { index, level -> index != i }).isSafe()) {
-                return true
-            }
-        }
-
-        return false
     }
 }

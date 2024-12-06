@@ -1,5 +1,6 @@
-package nl.erikvanpaassen.aoc2024.day4a
+package nl.erikvanpaassen.aoc2024.day4.a
 
+import nl.erikvanpaassen.aoc2024.day4.b.isInBounds
 import java.io.File
 
 fun main() {
@@ -27,27 +28,27 @@ fun findXmases(grid: Array<CharArray>, x: Int, y: Int): Int {
     var xmases = 0
 
     // Naar rechts
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(grid, y, x + 3) && grid[y][x + 1] == 'M' && grid[y][x + 2] == 'A' && grid[y][x + 3] == 'S') {
+    if (isInBounds(grid, y, x + 3) && grid[y][x + 1] == 'M' && grid[y][x + 2] == 'A' && grid[y][x + 3] == 'S') {
         xmases++
     }
 
     // Naar links
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(grid, y, x - 3) && grid[y][x - 1] == 'M' && grid[y][x - 2] == 'A' && grid[y][x - 3] == 'S') {
+    if (isInBounds(grid, y, x - 3) && grid[y][x - 1] == 'M' && grid[y][x - 2] == 'A' && grid[y][x - 3] == 'S') {
         xmases++
     }
 
     // Naar onder
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(grid, y + 3, x) && grid[y + 1][x] == 'M' && grid[y + 2][x] == 'A' && grid[y + 3][x] == 'S') {
+    if (isInBounds(grid, y + 3, x) && grid[y + 1][x] == 'M' && grid[y + 2][x] == 'A' && grid[y + 3][x] == 'S') {
         xmases++
     }
 
     // Naar boven
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(grid, y - 3, x) && grid[y - 1][x] == 'M' && grid[y - 2][x] == 'A' && grid[y - 3][x] == 'S') {
+    if (isInBounds(grid, y - 3, x) && grid[y - 1][x] == 'M' && grid[y - 2][x] == 'A' && grid[y - 3][x] == 'S') {
         xmases++
     }
 
     // Naar rechtsonder
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(
+    if (isInBounds(
             grid,
             y + 3,
             x + 3
@@ -57,7 +58,7 @@ fun findXmases(grid: Array<CharArray>, x: Int, y: Int): Int {
     }
 
     // Naar rechtsboven
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(
+    if (isInBounds(
             grid,
             y - 3,
             x + 3
@@ -67,7 +68,7 @@ fun findXmases(grid: Array<CharArray>, x: Int, y: Int): Int {
     }
 
     // Naar linksonder
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(
+    if (isInBounds(
             grid,
             y + 3,
             x - 3
@@ -77,7 +78,7 @@ fun findXmases(grid: Array<CharArray>, x: Int, y: Int): Int {
     }
 
     // Naar linksboven
-    if (nl.erikvanpaassen.aoc2024.day4b.isInBounds(
+    if (isInBounds(
             grid,
             y - 3,
             x - 3

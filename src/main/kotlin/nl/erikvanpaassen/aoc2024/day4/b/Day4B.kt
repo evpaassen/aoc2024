@@ -1,4 +1,4 @@
-package nl.erikvanpaassen.aoc2024.day4b
+package nl.erikvanpaassen.aoc2024.day4.b
 
 import java.io.File
 
